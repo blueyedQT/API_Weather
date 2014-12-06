@@ -30,7 +30,7 @@
 						$('.forcast').html("<h2>Weather for "+city+"</h2>"+
 							"<p>Current Temp F: "+tempF+" degrees</p>"+
 							"<p>Current Temp C: "+tempC+" degrees</p>"+
-							"<p>Current Widnspeed: "+wind+" MPH</p>"+
+							"<p>Current Windspeed: "+wind+" MPH</p>"+
 							"<p>Weather Description: "+description+"</p>"+
 							"<img alt='weather icon' src='"+src+"'' />"
 							);
