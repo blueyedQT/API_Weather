@@ -12,23 +12,27 @@
 					$(this).serialize(), 
 					function(output) {
 						console.log(output);
-						// city = '';
-						// if(output.data.request[0].query == '98055') {
-						// 	city = 'Renton, WA';
-						// } elseif(output.data.request[0].query == '98102') {
-						// 	city == 'Las Vegas, NV';
-						// }
+						city = '';
+						if(output.data.request[0].query == '98055') {
+							city = 'Renton, WA';
+						}
+						if(output.data.request[0].query == '89102') {
+							city = 'Las Vegas, NV';
+						}
+						if(output.data.request[0].query == '84720') {
+							city = 'Cedar City, UT';
+						}
 						tempF = output.data.current_condition[0].temp_F;
 						tempC = output.data.current_condition[0].temp_C;
 						wind = output.data.current_condition[0].windspeedMiles;
 						description = output.data.current_condition[0].weatherDesc[0].value;
 						src = output.data.current_condition[0].weatherIconUrl[0].value;
-						$('#forcast').html("<h2>Weather for "+"</h2>"+
+						$('.forcast').html("<h2>Weather for "+city+"</h2>"+
 							"<p>Current Temp F: "+tempF+" degrees</p>"+
 							"<p>Current Temp C: "+tempC+" degrees</p>"+
 							"<p>Current Widnspeed: "+wind+" MPH</p>"+
 							"<p>Weather Description: "+description+"</p>"+
-							"<img alt='weather' src='"+src+"'' />"
+							"<img alt='weather icon' src='"+src+"'' />"
 							);
 					}, "json"
 				);
@@ -50,6 +54,7 @@
 			<input type="submit" name="submit" value="Get Weather!">
 		</select>
 	</form>
-	<div id="forcast"></div>
+	<div class="forcast"></div>
+</div>
 </body>
 </html>
